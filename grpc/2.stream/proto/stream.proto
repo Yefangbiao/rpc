@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package streamProto;
+
+//option go_package = "./";
+
+service StreamService{
+  // 服务端流式RPC, request: StreamRangeRequest. response: StreamStuResponse.
+  // List 返回所有查询范围内的 student 信息
+  rpc List(StreamRangeRequest)returns (stream StreamStuResponse){};
+
+  // 客户端流式RPC，request: StreamUpdateRequest. response: StreamOKResponse.
+  // Update 更新服务端学生信息,根据id更新age.
+  rpc Update(stream StreamUpdateRequest) returns(StreamOKResponse){};
+
+  // 双向流式RPC, request: StreamRangeRequest. response: StreamStuResponse.
+  // Check 根据请求的范围返回信息
+  rpc Check(stream StreamRangeRequest)returns(stream StreamStuResponse){};
+
+}
+
+message StreamRangeRequest{
+  // 请求从begin-end的信息
+  int32 begin = 1;
+  int32 end = 2;
+}
+
+message StreamStuResponse{
+  // 学生信息
+  string name = 1;
+  int32 age = 2;
+}
+
+message StreamUpdateRequest{
+  // 更新服务端学生信息,根据id更新age
+  int32 id = 1;
+  int32 age = 2;
+}
+
+message StreamOKResponse{
+  // 返回更新成功个数
+  int32 OK = 1;
+}
