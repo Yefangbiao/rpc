@@ -106,8 +106,8 @@ For **Go**, the compiler generates a `.pb.go` file with a type for each message 
 
 ##### Scalar Value Types 标量值类型
 
-<img src="protobuf.assets/image-20210420144558956.png" alt="image-20210420144558956" style="zoom: 40%;" />
 
+![标量值类型](protobuf.assets/image-20210420144558956.png)
 
 
 ##### Default Values(默认值)
@@ -408,3 +408,6 @@ service SearchService {
 附录：
 
 代码生成规则：https://developers.google.com/protocol-buffers/docs/reference/go-generated
+
+
+
