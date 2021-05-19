@@ -180,3 +180,8 @@ go get github.com/gogo/protobuf/protoc-gen-gofast
 protoc --gofast_out=plugins=grpc:. *.proto
 ```
 
+3.生成两个文件
+```go
+protoc --gofast_out=. *.proto \
+--gofast-grpc_out=. *.proto
+```

@@ -39,7 +39,7 @@ RPC 代指远程过程调用（Remote Procedure Call），它的调用包含了�
 
 | 框架 | Github                                 | 博客 | 备注 |
 | ---- | -------------------------------------- | ---- | ---- |
-| gRPC | https://github.com/Yefangbiao/rpc/grpc |      |      |
+| gRPC | https://github.com/Yefangbiao/rpc/tree/main/grpc |      |      |
 
 ## 参考内容
 

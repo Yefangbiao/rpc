@@ -6,14 +6,22 @@ gRPC是可以在任何环境中运行的现代开源高性能远程过程调用�
 
 ### 学习大纲
 
-| 目录       | Github                                                | 博客 | 备注 |
-| ---------- | ----------------------------------------------------- | ---- | ---- |
-| 1.gRPC入门 | https://github.com/Yefangbiao/rpc/grpc/1.introduction |      |      |
-|            |                                                       |      |      |
-|            |                                                       |      |      |
+| 目录       | Github                                                       | 博客 | 备注 |
+| ---------- | ------------------------------------------------------------ | ---- | ---- |
+| 1.gRPC入门 | [1.introduction](https://github.com/Yefangbiao/rpc/tree/main/grpc/1.introduction) | [1.gRPC入门](https://www.jianshu.com/p/7be911d18384)     |      |
+|            |                                                              |      |      |
+|            |                                                              |      |      |
+
+### 额外内容
+
+| 目录        | Github                                                       | 博客 | 备注 |
+| ----------- | ------------------------------------------------------------ | ---- | ---- |
+| Protobuf-go | [protobuf入门](https://github.com/Yefangbiao/rpc/tree/main/grpc/1.introduction/protobuf.md) | [protobuf入门](https://www.jianshu.com/p/836c906180bd)     |      |
+
 
 
 ### 参考内容
+
 + [Quick start](https://grpc.io/docs/languages/go/quickstart/)
 + [煎鱼-grpc](https://eddycjy.com/tags/grpc/)
 + [极客时间-深入浅出grpc](https://time.geekbang.org/column/article/0?cid=100005601)
