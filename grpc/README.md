@@ -9,8 +9,8 @@ gRPC是可以在任何环境中运行的现代开源高性能远程过程调用�
 | 目录       | Github                                                       | 博客                                                 | 备注 |
 | ---------- | ------------------------------------------------------------ | ---------------------------------------------------- | ---- |
 | 1.gRPC入门 | [1.introduction](https://github.com/Yefangbiao/rpc/tree/main/grpc/1.introduction) | [1.gRPC入门](https://www.jianshu.com/p/7be911d18384) |      |
-| 2.流式RPC  | [2.stream](https://github.com/Yefangbiao/rpc/tree/main/grpc/2.stream) | [2.gRPC流](https://www.jianshu.com/p/376fc34d95d6)                                                     |      |
-|            |                                                              |                                                      |      |
+| 2.流式RPC  | [2.stream](https://github.com/Yefangbiao/rpc/tree/main/grpc/2.stream) | [2.gRPC流](https://www.jianshu.com/p/376fc34d95d6)   |      |
+| 3.超时     | [3.deadline](https://github.com/Yefangbiao/rpc/tree/main/grpc/3.deadline) | [3.超时处理](https://www.jianshu.com/p/cbdaa44888ac) |      |
 
 ### 额外内容
 
