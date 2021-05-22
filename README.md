@@ -48,4 +48,3 @@ RPC 代指远程过程调用（Remote Procedure Call），它的调用包含了�
 ## 参考内容
 
 + [极客时间-RPC实战与核心原理](https://time.geekbang.org/column/intro/280)
-+ [极客兔兔-7天用Go从零实现系列](https://github.com/geektutu/7days-golang)
