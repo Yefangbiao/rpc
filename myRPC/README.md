@@ -23,8 +23,8 @@ RPC 的作用就是体现在这样两个方面：
 
 |         目录         |                             文档                             | 是否完成 |
 | :------------------: | :----------------------------------------------------------: | :------: |
-|  1.服务端与消息编码  | [服务端与消息编码](https://github.com/Yefangbiao/rpc/tree/main/grpc/doc/1-消息编码与服务端.md) |    ✔️     |
-|    2.高性能客户端    |                                                              |          |
+|  1.服务端与消息编码  | [服务端与消息编码](https://github.com/Yefangbiao/rpc/tree/main/myRPC/doc/1-消息编码与服务端.md) |    ✔️     |
+|    2.高性能客户端    | [高性能客户端](https://github.com/Yefangbiao/rpc/tree/main/myRPC/doc/2-高性能客户端.md) |    ✔️     |
 |      3.服务注册      |                                                              |          |
 |      4.超时处理      |                                                              |          |
 |    5.支持HTTP协议    |                                                              |          |

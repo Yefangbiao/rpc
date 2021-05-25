@@ -1,12 +1,10 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
 	"net"
 	"rpc/myRPC"
-	"rpc/myRPC/codec"
 	"time"
 )
 
@@ -24,23 +22,24 @@ func main() {
 	// 启动服务端
 	go server(Addr)
 
-	// 启动客户端
-	conn, _ := net.Dial("tcp", Addr)
-	defer func() { _ = conn.Close() }()
+	// 新建客户端
+	client, err := myRPC.Dial("tcp", Addr)
+	if err != nil {
+		log.Println(err)
+		return
+	}
 
 	time.Sleep(1 * time.Second)
-	json.NewEncoder(conn).Encode(myRPC.DefaultOption)
-	cc := codec.NewJsonCodec(conn)
 	// send request & receive response
 	for i := 0; i < 5; i++ {
-		h := &codec.Header{
-			ServiceMethod: "Foo.Sum",
-			Seq:           uint64(i),
-		}
-		_ = cc.Write(h, fmt.Sprintf("myRPC req %d", h.Seq))
-		_ = cc.ReadHeader(h)
+		ServiceMethod := "Foo.Sum"
+		args := fmt.Sprintf("myRPC req %d", i)
 		var reply string
-		_ = cc.ReadBody(&reply)
-		log.Println("reply:", h, reply)
+		err := client.Call(ServiceMethod, &args, &reply)
+		if err != nil {
+			log.Println(err)
+		}
+
+		log.Println("reply:", reply)
 	}
 }
