@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"log"
 	"net"
 	"rpc/myRPC"
@@ -41,7 +42,7 @@ func main() {
 			B: i + 1,
 		}
 		var reply Reply
-		err := client.Call(ServiceMethod, &args, &reply)
+		err := client.Call(context.Background(), ServiceMethod, &args, &reply)
 		if err != nil {
 			log.Println(err)
 		}

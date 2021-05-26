@@ -26,7 +26,7 @@ RPC 的作用就是体现在这样两个方面：
 |  1.服务端与消息编码  | [服务端与消息编码](https://github.com/Yefangbiao/rpc/tree/main/myRPC/doc/1-消息编码与服务端.md) |    ✔️     |
 |    2.高性能客户端    | [高性能客户端](https://github.com/Yefangbiao/rpc/tree/main/myRPC/doc/2-高性能客户端.md) |    ✔️     |
 |      3.服务注册      | [服务注册](https://github.com/Yefangbiao/rpc/tree/main/myRPC/doc/3-服务注册.md) |    ✔️     |
-|      4.超时处理      |                                                              |          |
+|      4.超时处理      | [超时处理](https://github.com/Yefangbiao/rpc/tree/main/myRPC/doc/4-超时处理.md) |    ✔️     |
 |    5.支持HTTP协议    |                                                              |          |
 |      6.负载均衡      |                                                              |          |
 | 7.服务发现与注册中心 |                                                              |          |

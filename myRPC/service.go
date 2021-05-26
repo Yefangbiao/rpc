@@ -105,10 +105,10 @@ func (s *service) registerMethods() {
 			continue
 		}
 		// check Reply field is ExportedOrBuiltinType
-		for i := 0; i < replyType.Elem().NumField(); i++ {
-			//field := replyType.Elem().Field(i)
-			// Perfect later
-		}
+		//for i := 0; i < replyType.Elem().NumField(); i++ {
+		//field := replyType.Elem().Field(i)
+		// Perfect later
+		//}
 		// The return type of the method must be error.
 		if returnType := mType.Out(0); returnType != typeOfError {
 			if reportErr {
