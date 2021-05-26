@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net"
 	"rpc/myRPC"
@@ -14,6 +13,10 @@ func server(addr string) {
 	lis, err := net.Listen("tcp", addr)
 	if err != nil {
 		return
+	}
+	err = myRPC.Register(&Foo{})
+	if err != nil {
+		log.Println(err)
 	}
 	myRPC.Accept(lis)
 }
@@ -32,9 +35,12 @@ func main() {
 	time.Sleep(1 * time.Second)
 	// send request & receive response
 	for i := 0; i < 5; i++ {
-		ServiceMethod := "Foo.Sum"
-		args := fmt.Sprintf("myRPC req %d", i)
-		var reply string
+		ServiceMethod := "Foo.Add"
+		args := Args{
+			A: i,
+			B: i + 1,
+		}
+		var reply Reply
 		err := client.Call(ServiceMethod, &args, &reply)
 		if err != nil {
 			log.Println(err)
@@ -42,4 +48,21 @@ func main() {
 
 		log.Println("reply:", reply)
 	}
+}
+
+type Foo struct {
+}
+
+type Args struct {
+	A, B int
+}
+
+type Reply struct {
+	Val int
+}
+
+func (foo *Foo) Add(args *Args, reply *Reply) error {
+	a, b := args.A, args.B
+	reply.Val = a + b
+	return nil
 }

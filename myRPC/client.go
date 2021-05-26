@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"io"
+	"log"
 	"net"
 	"rpc/myRPC/codec"
 	"sync"
@@ -104,11 +105,11 @@ func (client *Client) receive() {
 		var h codec.Header
 		err = client.cc.ReadHeader(&h)
 		if err != nil {
+			log.Println("rpc: receive: err:", err)
 			break
 		}
 
 		call := client.removeCall(h.Seq)
-
 		switch {
 		case call == nil:
 			// We've got no pending call. That usually means that
