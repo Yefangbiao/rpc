@@ -42,7 +42,7 @@ func main() {
 			B: i + 1,
 		}
 		var reply Reply
-		ctx, _ := context.WithTimeout(context.Background(), time.Microsecond)
+		ctx, _ := context.WithTimeout(context.Background(), time.Second)
 		err := client.Call(ctx, ServiceMethod, &args, &reply)
 		if err != nil {
 			log.Println(err)

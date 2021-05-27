@@ -51,6 +51,13 @@ type Client struct {
 	shutdown bool // server has told us to stop
 }
 
+// IsAvailable return true if the client does work
+func (client *Client) IsAvailable() bool {
+	client.mu.Lock()
+	defer client.mu.Unlock()
+	return !client.shutdown && !client.closing
+}
+
 var _ io.Closer = (*Client)(nil)
 
 // Close calls the underlying codec's Close method. If the connection is already
