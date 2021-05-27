@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"net"
+	"net/http"
 	"rpc/myRPC"
 	"time"
 )
@@ -19,15 +20,23 @@ func server(addr string) {
 	if err != nil {
 		log.Println(err)
 	}
-	myRPC.Accept(lis)
+	myRPC.HandleHTTP()
+	http.Serve(lis, nil)
 }
 
 func main() {
-	// 启动服务端
-	go server(Addr)
 
+	go call()
+
+	// 启动服务端
+	server(Addr)
+
+	// 通过网络服务调用，打开后查看在浏览器输入"localhost:50001/debug/rpc"
+}
+
+func call() {
 	// 新建客户端
-	client, err := myRPC.Dial("tcp", Addr)
+	client, err := myRPC.DialHTTP("tcp", Addr)
 	if err != nil {
 		log.Println(err)
 		return
@@ -42,8 +51,7 @@ func main() {
 			B: i + 1,
 		}
 		var reply Reply
-		ctx, _ := context.WithTimeout(context.Background(), time.Microsecond)
-		err := client.Call(ctx, ServiceMethod, &args, &reply)
+		err := client.Call(context.Background(), ServiceMethod, &args, &reply)
 		if err != nil {
 			log.Println(err)
 		}
