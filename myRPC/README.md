@@ -29,7 +29,7 @@ RPC 的作用就是体现在这样两个方面：
 |      4.超时处理      | [超时处理](https://github.com/Yefangbiao/rpc/tree/main/myRPC/doc/4-超时处理.md) |    ✔️     |
 |    5.支持HTTP协议    | [支持HTTP](https://github.com/Yefangbiao/rpc/tree/main/myRPC/doc/5-支持HTTP协议.md) |    ✔️     |
 |      6.负载均衡      | [负载均衡](https://github.com/Yefangbiao/rpc/tree/main/myRPC/doc/6-负载均衡.md) |    ✔️     |
-| 7.服务发现与注册中心 |                                                              |          |
+| 7.服务发现与注册中心 | [服务发现与注册中心](https://github.com/Yefangbiao/rpc/tree/main/myRPC/doc/7-服务发现与注册中心.md) |    ✔️     |
 
 
 

@@ -185,6 +185,18 @@ func NewClientWithOption(conn net.Conn, opt *Option) (*Client, error) {
 
 // Dial connects to an RPC server at the specified network address.
 func Dial(network, address string, opts ...*Option) (*Client, error) {
+	//parts := strings.Split(address, "@")
+	////if len(parts) != 2 {
+	////	return nil, fmt.Errorf("rpc client err: wrong format '%s', expect protocol@addr", address)
+	////}
+	//protocol, addr := parts[0], parts[1]
+	//switch protocol {
+	//case "http":
+	//	return DialHTTP("tcp", addr)
+	//default:
+	//	// tcp, unix or other transport protocol
+	//	//return Dial(protocol, addr, opts...)
+	//}
 	return dialWithTimeout(network, address, opts...)
 }
 
